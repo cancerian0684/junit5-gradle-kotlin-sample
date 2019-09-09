@@ -1,6 +1,6 @@
 package com.shunya;
 
-public class PalindromeChecker {
+public class PalindromeStringChecker {
 
     public boolean isPalindrome2(String input) {
         if(input == null) {

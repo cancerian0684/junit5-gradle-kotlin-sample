@@ -6,23 +6,23 @@ import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
-class PalindromeCheckerTest {
+class PalindromeStringCheckerTest {
 
     @Test
     fun `check a palindrome string`() {
-        val checker = PalindromeChecker()
+        val checker = PalindromeStringChecker()
         assertEquals(true, checker.isPalindrome("madam"))
     }
 
     @Test
     fun `check a non-palindrome string`() {
-        val checker = PalindromeChecker()
+        val checker = PalindromeStringChecker()
         assertEquals(false, checker.isPalindrome("namste"))
     }
 
     @Test
     fun `check null input for palindrome`() {
-        val checker = PalindromeChecker()
+        val checker = PalindromeStringChecker()
         val exception = assertThrows<IllegalArgumentException> {
             checker.isPalindrome(null)
         }
@@ -37,7 +37,7 @@ class PalindromeCheckerTest {
         "hello,   false"
     )
     fun `csv palindrome checker`(first: String, expectedResult: Boolean) {
-        val calculator = PalindromeChecker()
+        val calculator = PalindromeStringChecker()
         assertEquals(expectedResult, calculator.isPalindrome(first)) {
             if (expectedResult) {
                 "$first is not a palidrome"
